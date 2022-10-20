@@ -87,19 +87,47 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        public void Test1QuilleEn2LanceApresSpare()
+        public void Test1QuilleEn1LanceApresSpare()
         {
             // ETANT DONNE une partie
             var partie = new Partie();
 
-            // QUAND on fait tomber 1 quille en 2 fois après un spare
+            // QUAND on fait tomber 1 quille après un spare
             partie.Lancer(9);
             partie.Lancer(1);
             partie.Lancer(1);
-            partie.Lancer(0);
+
+            // ALORS le score est de 12
+            Assert.AreEqual(12, partie.Score);
+        }
+
+        // [TestMethod]
+        // public void Test1QuilleEn1LanceApresSrike()
+        // {
+        //     // ETANT DONNE une partie
+        //     var partie = new Partie();
+
+        //     // QUAND on fait tomber 1 quille après un strike
+        //     partie.Lancer(10);
+        //     partie.Lancer(1);
+
+        //     // ALORS le score est de 0
+        //     Assert.AreEqual(1, partie.Score);
+        // }
+
+        [TestMethod]
+        public void Test5QuilleEn2LanceApresSrike()
+        {
+            // ETANT DONNE une partie
+            var partie = new Partie();
+
+            // QUAND on fait tomber 1 quille après un strike
+            partie.Lancer(10);
+            partie.Lancer(1);
+            partie.Lancer(4);
 
             // ALORS le score est de 0
-            Assert.AreEqual(12, partie.Score);
+            Assert.AreEqual(20, partie.Score);
         }
     }
 }
