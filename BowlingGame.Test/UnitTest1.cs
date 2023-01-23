@@ -129,5 +129,21 @@ namespace BowlingGame.Test
             // ALORS le score est de 0
             Assert.AreEqual(20, partie.Score);
         }
+
+        [TestMethod]
+        public void TestQuilleEn4LanceApresSrike()
+        {
+            // ETANT DONNE une partie
+            var partie = new Partie();
+
+            // QUAND on fait tomber 1 quille après un strike
+            partie.Lancer(10);
+            partie.Lancer(1);
+            partie.Lancer(4);
+            partie.Lancer(6);
+
+            // ALORS le score est de 0
+            Assert.AreEqual(26, partie.Score);
+        }
     }
 }

@@ -27,6 +27,7 @@ public class Partie
             var bonus = 10 + nombreQuillesTombées + _historique[_historique.Count - 2];
             Score = bonus + nombreQuillesTombées + _historique[_historique.Count - 2];
         }
+
     }
 
     private IEnumerable<int> DeuxDerniersLancers => _historique.AsEnumerable().Reverse().Take(2);
